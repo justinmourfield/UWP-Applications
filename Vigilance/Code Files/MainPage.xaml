@@ -1,0 +1,126 @@
+﻿<Page
+    x:Class="Vigilance.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Vigilance"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
+    mc:Ignorable="d"
+   Background="White">
+    <Grid Margin="0,0,0,0" Style="{StaticResource Gridstyle}" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="34*" />
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="32*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.RowSpan="21" Grid.ColumnSpan="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Border.Background>
+                <SolidColorBrush Color="#FFFAEFBA" Opacity="0.3"/>
+            </Border.Background>
+        </Border>
+        <Border Grid.RowSpan="19" Grid.ColumnSpan="1" BorderBrush="Black" BorderThickness="4,4,4,4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="3" Margin="10,0,0,0"  >
+            <Maps:MapControl x:Name="myMap" Grid.Row="1" Grid.RowSpan="19" Grid.Column="3" Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Layers="{x:Bind ViewModel.LayerCollection}" RotateInteractionMode="Auto"  MapServiceToken="cTr7mik853Nm31dEUZ4s~IzwGC2_ijRPgmC0IhyMcNA~Avhs5mUXBJtB7cnPm6FmPKVjaHqG7Pd7gesPUsxTQcCT9QLo7SRan4yGbUyxRETB" MapElementClick="myMap_MapElementClick_1"/>
+        </Border>
+        <TextBlock x:Name="FilterBar_Title"  Grid.Row="9" Grid.Column="1" Text="Refine Search" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" TextDecorations="Underline" FontSize="15" />
+        <Border Grid.RowSpan="9" BorderBrush="Black" Grid.ColumnSpan="1" BorderThickness="2,2,2,2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="10" Grid.Column="1" Margin="0,0,0,5">
+            <ListView x:Name="Checkboxes" Background="#FFF2F2F2" SelectionMode="None" ToolTipService.ToolTip="Select crimes to display" >
+                <CheckBox x:Name="Arson" Grid.Row="2" Grid.Column="1" Content="Arson" Height="34" Margin="0,0,0,0" />
+                <CheckBox x:Name="Assault" Grid.Row="3" Grid.Column="1" Content="Assault" Height="34" Margin="0,0,0,0" />
+                <CheckBox x:Name="Burglary" Grid.Row="4" Grid.Column="1" Content="Burglary" Height="34" Margin="0,0,0,0" />
+                <CheckBox x:Name="CriminalTraffic" Grid.Row="5" Grid.Column="1" Content="Criminal Traffic" Height="34" Margin="0,0,0,0" />
+                <CheckBox x:Name="DrugPossession" Grid.Row="6" Grid.Column="1" Content="Drug Possession" Height="34" Margin="0,0,0,0" />
+                <CheckBox x:Name="DrugSaleAndManufacture" Grid.Row="7" Grid.Column="1" Content="Drug Sale/Manufacture" Height="34" Margin="0,0,0,0" />
+                <CheckBox x:Name="FraudOrForgery" Grid.Row="8" Grid.Column="1" Content="Fraud or Forgery" Height="34" Margin="0,0,0,0"  />
+                <CheckBox x:Name="Homicide" Grid.Row="9" Grid.Column="1" Content="Homicide" Height="34" Margin="0,0,0,0" />
+                <CheckBox x:Name="Intimidation" Grid.Row="10" Grid.Column="1" Content="Intimidation" Height="34" Margin="0,0,0,0" />
+                <CheckBox x:Name="LiquorLawViolation" Grid.Row="11" Grid.Column="1" Content="Liquor Law Violation" Height="34" Margin="0,0,0,0" />
+                <CheckBox x:Name="MotorVehicleTheft" Grid.Row="12" Grid.Column="1" Content="Motor Vehicle Theft" Height="34" Margin="0,0,0,0"/>
+                <CheckBox x:Name="PossesionOfStolenProperty" Grid.Row="13" Grid.Column="1" Content="Possession of Stolen Property" Height="34" Margin="0,0,0,0" />
+                <CheckBox x:Name="Robbery" Content="Robbery" Grid.Row="14" Grid.Column="1" Height="34" Margin="0,0,0,0" />
+                <CheckBox x:Name="TelephoneHarrassment" Grid.Row="15" Grid.Column="1" Content="Telephone Harassment" Height="34" Margin="0,0,0,0" />
+                <CheckBox x:Name="Theft" Content="Theft" Grid.Row="16" Grid.Column="1" Height="34" Margin="0,0,0,0" />
+                <CheckBox x:Name="TraffickingStolenProperty" Grid.Row="17" Grid.Column="1" Content="Trafficking in Stolen Property" Height="34" Margin="0,0,0,0"/>
+                <CheckBox x:Name="Vandalism" Content="Vandalism" Grid.Row="18" Grid.Column="1" Height="34" Margin="0,0,0,0" />
+                <CheckBox x:Name="WarrantArrests" Content="Warrant Arrests" Grid.Row="19" Grid.Column="1" Height="34" Margin="0,0,0,0" />
+            </ListView>
+        </Border>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="19" Grid.Column="1" >
+            <Button Content="Reset Search" Background="Gray" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="Auto"  Width="115" Margin="0,0,3,0" Click="Reset_Button_Click" Padding="4,4,4,4" />
+            <Button Content="Update Search" Background="Gray" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="Auto" Width="115" Margin="0,0,0,0" Click="Update_Button_Click" Padding="4,4,4,4"/>
+        </StackPanel>
+        <TextBlock x:Name="Legend_TitleBar" Text="Map Legend"  Grid.Row="1" Width="89" Grid.Column="1" Margin="2,0,2,0" HorizontalAlignment="Center" TextWrapping="WrapWholeWords" TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" TextDecorations="Underline" FontSize="15" />
+        <Border Grid.RowSpan="7"  BorderBrush="Black" BorderThickness="2,2,2,2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2" Grid.Column="1" Margin="0,5,0,0">
+            <ListView Background="#FFF2F2F2" SelectionMode="None" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel>
+                        <Image x:Name="ArsonIcon" HorizontalAlignment="Center"  Height="24" Width ="24" Margin="0,0,0,5" VerticalAlignment="Center" Source="Assets/Icons/Arson Icon35px.png"/>
+                        <Image x:Name="AssaultIcon" HorizontalAlignment="Center" Height="24" Width ="24" Margin="0,0,0,5" VerticalAlignment="Center" Source="Assets/Icons/Assault Icon35px.png" />
+                        <Image x:Name="BurglaryIcon" HorizontalAlignment="Center" Height="24" Margin="0,0,0,5" VerticalAlignment="Center" Source="Assets/Icons/Burglary Icon35px.png" />
+                        <Image x:Name="CriminalTrafficIcon" HorizontalAlignment="Center" Height="24" Margin="0,0,0,5" VerticalAlignment="Center" Source="Assets/Icons/Criminal Traffic Icon35px.png" />
+                        <Image x:Name="DrugPossessionIcon" HorizontalAlignment="Center" Height="24" Margin="0,0,0,5" VerticalAlignment="Center" Source="Assets/Icons/Drug Icon35px.png" />
+                        <Image x:Name="FraudOrForgeryIcon" HorizontalAlignment="Center" Height="24" Margin="0,0,0,5" VerticalAlignment="Center" Source="Assets/Icons/Fraud Icon35px.png" />
+                        <Image x:Name="HomicideIcon" HorizontalAlignment="Center" Height="24" Margin="0,0,0,5" VerticalAlignment="Center" Source="Assets/Icons/Homicide Icon35px.png"/>
+                        <Image x:Name="InitmidationIcon" HorizontalAlignment="Center" Height="24" Margin="0,0,0,5" VerticalAlignment="Center" Source="Assets/Icons/Intimidation Icon35px.png"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="Arson" Margin="2,0,0,5" Height="24" />
+                        <TextBlock Text="Assault" Margin="2,0,0,5" Height="24"/>
+                        <TextBlock Text="Burglary" Margin="2,0,0,5" Height="24"/>
+                        <TextBlock Text="Criminal Traffic" Margin="2,0,0,5" Height="24"/>
+                        <TextBlock Text="Drug Related" Margin="2,0,0,5" Height="24"/>
+                        <TextBlock Text="Fraud or Forgery" Margin="2,0,0,5" Height="24"/>
+                        <TextBlock Text="Homicide" Margin="2,0,0,5" Height="24"/>
+                        <TextBlock Text="Intimidation" Margin="2,0,0,5" Height="24"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <Image x:Name="LiquorLawViolationIcon" HorizontalAlignment="Center"  Height="24" Margin="0,0,0,5" VerticalAlignment="Center" Source="Assets/Icons/Liquor Law Violation Icon35px.png" />
+                        <Image x:Name="MotorVehicleTheftIcon" HorizontalAlignment="Center" Height="24" Margin="0,0,0,5" VerticalAlignment="Center" Source="Assets/Icons/Motor Vehicle Theft Icon35px.png" />
+                        <Image x:Name="PossessionOfStolenPropertyIcon" HorizontalAlignment="Center"  Height="24" Margin="0,0,0,5" VerticalAlignment="Center" Source="Assets/Icons/Stolen Property Icon35px.png" />
+                        <Image x:Name="RobberyIcon" HorizontalAlignment="Center" Height="24" Margin="0,0,0,5" VerticalAlignment="Center" Source="Assets/Icons/Robbery Icon35px.png" />
+                        <Image x:Name="TelephoneHarassmentIcon" HorizontalAlignment="Center" Height="24" Margin="0,0,0,5" VerticalAlignment="Center" Source="Assets/Icons/Telephone Harrassment Icon35px.png" />
+                        <Image x:Name="TheftIcon" HorizontalAlignment="Center" Height="24" Margin="0,0,0,5" VerticalAlignment="Center" Source="Assets/Icons/Theft Icon35px.png" />
+                        <Image x:Name="VandalismIcon" HorizontalAlignment="Center"  Height="24" Margin="0,0,0,5" VerticalAlignment="Center" Source="Assets/Icons/Vandalism Icon35px.png" />
+                        <Image x:Name="WarrantArrestIcon" HorizontalAlignment="Center" Height="24" Margin="0,0,0,5" VerticalAlignment="Stretch" Source="Assets/Icons/Warrant Icon35px.png" Width="24"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="Liquor Violation" Margin="2,0,0,5" Height="24" />
+                        <TextBlock Text="Vehicle Theft" Margin="2,0,0,5" Height="24"/>
+                        <TextBlock Text="Stolen Property" Margin="2,0,0,5" Height="24"/>
+                        <TextBlock Text="Robbery" Margin="2,0,0,5" Height="24"/>
+                        <TextBlock Text="Phone Harassment" Margin="2,0,0,5" Height="24"/>
+                        <TextBlock Text="Theft" Margin="2,0,0,5" Height="24"/>
+                        <TextBlock Text="Vandalism" Margin="2,0,0,5" Height="24"/>
+                        <TextBlock Text="Warrant Arrest" Margin="2,0,0,5" Height="24"/>
+                    </StackPanel>
+                </StackPanel>
+            </ListView>
+        </Border>
+        <HyperlinkButton Content="Bing Maps Terms of Use" Grid.Row="20" Grid.Column="3" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Top" NavigateUri="https://www.microsoft.com/en-us/maps/product/terms-april-2011"/>
+    </Grid>
+</Page>
